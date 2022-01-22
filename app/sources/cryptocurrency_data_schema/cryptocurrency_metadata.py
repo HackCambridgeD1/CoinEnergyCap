@@ -1,6 +1,6 @@
 import dataclasses
 
-from sources.cryptocurrency_data_schema.cryptocurrency_type import CryptocurrencyType
+from app.sources.cryptocurrency_data_schema.cryptocurrency_type import CryptocurrencyType
 
 
 @dataclasses.dataclass
