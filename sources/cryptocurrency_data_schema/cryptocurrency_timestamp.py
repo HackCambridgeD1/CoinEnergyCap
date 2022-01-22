@@ -11,8 +11,3 @@ class CryptocurrencyTimestamp:
     hashes_per_second: float
     volume: float
     price: float
-    estimated_transaction: float
-
-
-def estimate_transactions_from_volume_and_price(volume: float, price: float):
-    return volume / price

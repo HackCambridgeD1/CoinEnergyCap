@@ -31,9 +31,6 @@ def map_minerstat_response_to_crypto_timestamp(cryptocurrency_metadata: Cryptocu
         hashes_per_second=minerstat_response["network_hashrate"],
         volume=minerstat_response["volume"],
         price=minerstat_response["price"],
-        estimated_transaction=estimate_transactions_from_volume_and_price(
-            minerstat_response["volume"], minerstat_response["price"]
-        )
     )
 
 
