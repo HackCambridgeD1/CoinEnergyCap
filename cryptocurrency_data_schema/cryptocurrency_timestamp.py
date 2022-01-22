@@ -1,7 +1,7 @@
 import dataclasses
 import datetime
 
-from cryptocurrency_metadata import CryptocurrencyMetadata
+from cryptocurrency_data_schema.cryptocurrency_metadata import CryptocurrencyMetadata
 
 
 @dataclasses.dataclass
