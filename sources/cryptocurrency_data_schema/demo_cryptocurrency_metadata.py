@@ -1,5 +1,5 @@
-from cryptocurrency_data_schema.cryptocurrency_metadata import CryptocurrencyMetadata
-from cryptocurrency_data_schema.cryptocurrency_type import CryptocurrencyType
+from sources.cryptocurrency_data_schema.cryptocurrency_metadata import CryptocurrencyMetadata
+from sources.cryptocurrency_data_schema.cryptocurrency_type import CryptocurrencyType
 
 PROOF_OF_WORK = CryptocurrencyType.PROOF_OF_WORK
 
@@ -24,3 +24,5 @@ demo_metadata = [
     CryptocurrencyMetadata(symbol="KMD", name="Komodo", efficiency=9.00E+01, type=PROOF_OF_WORK),
     CryptocurrencyMetadata(symbol="BCN", name="Bytecoin", efficiency=5.00E+02, type=PROOF_OF_WORK)
 ]
+
+demo_metadata_map = {metadata.symbol: metadata for metadata in demo_metadata}
