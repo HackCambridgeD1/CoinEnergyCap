@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route("/")
 @app.route("/home")
 def home():
-  return render_template("home.html")
+  return render_template("home.html", currencies = ["c1", "c2"])
  # return "<h1>Homepage!</h1>"
   
   
