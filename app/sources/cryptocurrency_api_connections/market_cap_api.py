@@ -1,10 +1,11 @@
-from requests import Request, Session
+from requests import Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import json
-from sources.cryptocurrency_data_schema import demo_cryptocurrency_metadata
+
+from app.sources.cryptocurrency_data_schema import demo_cryptocurrency_metadata
 
 
-def get_symbol_market_cap():
+def get_symbol_market_cap_map():
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/categories'
     parameters = {
         'symbol': ",".join(demo_cryptocurrency_metadata.demo_metadata_symbol)
