@@ -2,9 +2,8 @@ from datetime import datetime
 from typing import List, TypedDict
 import requests
 
-from sources.cryptocurrency_data_schema.cryptocurrency_metadata import CryptocurrencyMetadata
-from sources.cryptocurrency_data_schema.cryptocurrency_timestamp import CryptocurrencyTimestamp, \
-    estimate_transactions_from_volume_and_price
+from app.sources.cryptocurrency_data_schema.cryptocurrency_metadata import CryptocurrencyMetadata
+from app.sources.cryptocurrency_data_schema.cryptocurrency_timestamp import CryptocurrencyTimestamp
 
 
 class MinerstatResponse(TypedDict):

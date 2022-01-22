@@ -1,5 +1,5 @@
-from sources.cryptocurrency_data_schema.cryptocurrency_metadata import CryptocurrencyMetadata
-from sources.cryptocurrency_data_schema.cryptocurrency_type import CryptocurrencyType
+from app.sources.cryptocurrency_data_schema.cryptocurrency_metadata import CryptocurrencyMetadata
+from app.sources.cryptocurrency_data_schema.cryptocurrency_type import CryptocurrencyType
 
 PROOF_OF_WORK = CryptocurrencyType.PROOF_OF_WORK
 
