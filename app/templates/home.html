@@ -11,14 +11,34 @@
   <div class = "row", style="background-color:white; color:black; padding:20px;">
    <div class="accordion" id="accordionExample">
       {% for curr in currencies %}
-
   <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        {{curr}}
+    <h2 class="accordion-header" id="heading{{ curr[0] }}">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ curr[0] }}" aria-expanded="false" aria-controls="collapse{{ curr[0] }}">
+       <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            {{curr[0]}}
+          </div>
+          <div class="col-sm">
+            Energy Consumed : {{curr[1]}}
+          </div>
+          <div class="col-sm">
+            C02 : {{curr[2]}}
+          </div>
+          <div class="col-sm">
+            Price : {{curr[3]}}
+          </div>
+          <div class="col-sm">
+            Market Cap : {{curr[4]}}
+          </div>
+          <div class="col-sm">
+            Energy/£ : {{curr[5]}}
+          </div>
+        </div>
+      </div>
       </button>
     </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+    <div id="collapse{{ curr[0] }}" class="accordion-collapse collapse" aria-labelledby="heading{{ curr[0] }}" data-bs-parent="#accordionExample">
       <div class="accordion-body">
         <strong>This is the first item's accordion body.</strong>
       </div>
