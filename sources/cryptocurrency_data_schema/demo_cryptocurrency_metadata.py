@@ -26,3 +26,5 @@ demo_metadata = [
 ]
 
 demo_metadata_map = {metadata.symbol: metadata for metadata in demo_metadata}
+
+demo_metadata_symbol = [item.symbol for item in demo_metadata]
