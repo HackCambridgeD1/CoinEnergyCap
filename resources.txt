@@ -1,6 +1,11 @@
-https://www.nature.com/articles/s41893-018-0152-7#Sec2
-https://www.coinwarz.com/mining/litecoin/hashrate-chart
-https://ycharts.com/indicators/bitcoin_transactions_per_day
+MAIN
 
+- https://www.nature.com/articles/s41893-018-0152-7#Sec2
+- https://www.coinwarz.com/mining/litecoin/hashrate-chart
+- https://ycharts.com/indicators/bitcoin_transactions_per_day
 
 So we have Hashrate, Transactions per day and the paper on computation -- These might be good resources to start with!
+
+
+RANDOM
+- https://www.leafscore.com/blog/the-9-most-sustainable-cryptocurrencies-for-2021/ (could be used as examples during the demo intro)
