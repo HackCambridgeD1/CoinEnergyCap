@@ -34,7 +34,63 @@
         </div>
     </div>
 
-    <div class="row" , style="background-color:white; color:black; padding:20px;">
+    <script>
+        const utils = import("../static/js/utils");
+        let currencies = {{currencies | safe}}
+        let labels = currencies.map(x => x[0]).slice(0, 10)
+        let datapoints = currencies.map(x => x[1]).slice(0, 10)
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Cryptocurrency vs Energy Consumption (TW/a)',
+                backgroundColor: 'rgba(104, 15, 194, 0.5)',
+                fill: true,
+                tension: 0.4,
+                borderColor: '#680FC2',
+                data: datapoints,
+                pointStyle: 'circle',
+                pointRadius: 6,
+            }]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                    plugins: {
+                        title: {
+                        display: true,
+                        text: 'Cryptocurrencies with the Highest Energy Consumption (TW/a)',
+                    }, legend: {
+                        display: false
+                    }
+                },
+
+                tooltip: {
+                    usePointStyle: true,
+                },
+                interaction: {
+                    intersect: false,
+                },
+            }
+        };
+    </script>
+
+    <div style="margin-top:6em; margin-bottom: 6em">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    </script>
+
+
+    <div class="row" , style="background-color:white; color:black; padding:20px; margin-top: 10em !important;">
         <div class="accordion" id="accordionExample">
             {% for curr in currencies %}
             <div class="accordion-item">
