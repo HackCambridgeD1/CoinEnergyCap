@@ -29,7 +29,7 @@ def map_minerstat_response_to_crypto_timestamp(cryptocurrency_metadata: Cryptocu
         metadata=cryptocurrency_metadata,
         hashes_per_second=minerstat_response["network_hashrate"],
         volume=minerstat_response["volume"],
-        price=minerstat_response["price"],
+        price=minerstat_response["price"]
     )
 
 
@@ -39,11 +39,14 @@ class MinerstatApiEndpoint:
     def get_data_for_cryptocurrencies(
             cryptocurrency_metadata: List[CryptocurrencyMetadata]
     ) -> List[CryptocurrencyTimestamp]:
+
         symbol_metadata_map = {metadata.symbol: metadata for metadata in cryptocurrency_metadata}
         cryptocurrency_identifiers = list(map(lambda metadata: metadata.symbol, cryptocurrency_metadata))
         response = requests.get(f"https://api.minerstat.com/v2/coins?list={','.join(cryptocurrency_identifiers)}")
 
+        dedup_responses = {minerstat_response["coin"] : minerstat_response for minerstat_response in response.json()}
+
         return [map_minerstat_response_to_crypto_timestamp(
             symbol_metadata_map[minerstat_response["coin"]], minerstat_response
         )
-            for minerstat_response in response.json()]
+            for minerstat_response in dedup_responses.values()]
