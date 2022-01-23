@@ -1,13 +1,13 @@
 from requests import Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 
-from app.sources.cryptocurrency_data_schema import demo_cryptocurrency_metadata
+from app.sources.cryptocurrency_data_schema.demo_cryptocurrency_metadata import demo_metadata_symbol
 
 
-def get_symbol_market_cap_map():
+def get_symbol_market_cap_map(symbol_list=demo_metadata_symbol):
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
     parameters = {
-        'symbol': ",".join(demo_cryptocurrency_metadata.demo_metadata_symbol)
+        'symbol': ",".join(symbol_list)
     }
     headers = {
         'Accepts': 'application/json',

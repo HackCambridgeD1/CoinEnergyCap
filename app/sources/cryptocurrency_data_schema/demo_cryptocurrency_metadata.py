@@ -26,5 +26,8 @@ demo_metadata = [
 ]
 
 demo_metadata_map = {metadata.symbol: metadata for metadata in demo_metadata}
+demo_metadata_efficiency_map = {metadata.symbol: metadata.efficiency for metadata in demo_metadata}
 
 demo_metadata_symbol = [item.symbol for item in demo_metadata]
+
+AVG_EFFICIENCY = sum([metadata.efficiency for metadata in demo_metadata]) / len(demo_metadata)
