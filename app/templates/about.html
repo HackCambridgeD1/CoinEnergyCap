@@ -1,5 +1,32 @@
 {% extends "base.html" %}
 {% block title %}About Page{% endblock %}
 {% block content %}
-Put info on calculations and sources here please ! :)
+
+    <div class="row" , style="width:100%;">
+        <h1 class="text-uppercase text-center headerstyle">About: Cryptocurrency Energy Usage</h1>
+    </div>
+
+    <div style="margin-bottom: 10em; padding-left: 2em; padding-right: 2em">
+        <h2> Methodology </h2>
+        <p>
+            We are using the methodology suggested in [1] to calculate a lower bound for the energy demand based on the hashrate of a crypto currencies network and a reasonable hash efficiency (energy/hash).
+            We are basing the efficiencies on results from [2], who calculated the lower bound for Bitcoins energy usage by taking the state of the art mining devices in 2020.
+            This data was only tabulated for about 15 of the largest coins, for all other coins, we make reasonable assumptions and guess an appropriate rate based on the existing ones.
+
+            We obtain Hashrate, Price and Volume from the API provided by Minerstat [3] and the market cap from Coinmarketcap [4].
+
+            Estimates for the energy usage of the UK and global energy intensities come from government sources [5][6][7]. We have assumed that one needs to plant about 6 trees to compensate for 1 ton of Carbon Dioxide. We believe this to be a reasonable number, after having seen figures from 1-30 for the same. Last, to calculate the "rounds around earth" one could drive with a car, we have selected an electric car, which should take about 15kWh/100km on which we base our calculations.
+
+            We do note that our data may be incorrect, in particular for sources that are not listed in the table for source [2].
+        </p>
+
+        <h2> References </h2>
+        [1] https://www.nature.com/articles/s41893-018-0152-7 <br>
+        [2] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7402366/ <br>
+        [3] https://minerstat.com/ <br>
+        [4] https://coinmarketcap.com/ <br>
+        [5] https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1043464/subnational_electricity_and_gas_consumption_summary_report_2020.pdf <br>
+        [6] https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2021 <br>
+        [7] https://pdf.sciencedirectassets.com/277910/1-s2.0-S1876610217X00398/1-s2.0-S1876610217361714/main.pdf <br>
+    </div>
 {% endblock %}
