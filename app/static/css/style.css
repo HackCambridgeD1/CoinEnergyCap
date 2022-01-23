@@ -52,6 +52,7 @@
     --counter-xxs: 1rem;
 }
 
+
 :root {
     --sunset: #6C0146;
     --sunset-purple: #997ADD;
@@ -84,8 +85,8 @@
     text-align: center !important;
 }
 
-.base-triangle-layout{
-    height:45em;
+.base-triangle-layout {
+    height: 45em;
     margin-top: 3em;
     margin-bottom: 10em !important;
     display: flex;
@@ -100,7 +101,7 @@
     margin-bottom: 1em;
 }
 
-.headerstyle{
+.headerstyle {
     z-index: 30;
     margin-top: -5em !important;
     font-size: 5em;
@@ -113,29 +114,37 @@
 .z-30 {
     z-index: -30;
 }
+
 .z-20 {
     z-index: -20;
 }
+
 .w-screen {
     width: 100vw;
     max-height: 50em;
     min-height: 45em;
 }
+
 .relative {
     position: relative;
 }
+
 .object-center {
     object-position: center;
 }
+
 .object-cover {
     object-fit: cover;
 }
+
 .-mt-48 {
     margin-top: -12rem;
 }
+
 .block {
     display: block;
 }
+
 img, video {
     max-width: 100%;
     height: auto;
@@ -145,11 +154,19 @@ img, video {
     padding-bottom: 12rem;
 }
 
-.navbar-container{
+.navbar-container {
     display: flex;
     flex: 1 1 0;
     flex-direction: row;
     align-items: center;
 
     justify-content: space-around;
+}
+
+
+.accordion-button:not(.collapsed) {
+    color: black;
+    border-color: #ECECEC;
+    background-color: #ffffff;
+    box-shadow: inset 0 -1px 0 #ECECEC;
 }
