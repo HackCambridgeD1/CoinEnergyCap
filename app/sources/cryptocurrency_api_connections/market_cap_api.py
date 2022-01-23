@@ -1,12 +1,11 @@
 from requests import Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
-import json
 
 from app.sources.cryptocurrency_data_schema import demo_cryptocurrency_metadata
 
 
 def get_symbol_market_cap_map():
-    url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/categories'
+    url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
     parameters = {
         'symbol': ",".join(demo_cryptocurrency_metadata.demo_metadata_symbol)
     }
@@ -20,15 +19,11 @@ def get_symbol_market_cap_map():
 
     try:
         response = session.get(url, params=parameters)
-        data = json.loads(response.text)
-        print(data)
+        data = response.json()
+        data = data["data"]
     except (ConnectionError, Timeout, TooManyRedirects) as e:
         data = {}
         print(e)
 
-    market_cap = []
-    for cryptocoin in data.get('data'):
-        market_cap += [cryptocoin.get('market_cap')]
+    return {symbol: info["quote"]["USD"]["market_cap"] for symbol, info in data.items()}
 
-    crypto_market_cap = list(zip(demo_cryptocurrency_metadata.demo_metadata_symbol, market_cap))
-    return {symbol: market_cap for symbol, market_cap in crypto_market_cap}
