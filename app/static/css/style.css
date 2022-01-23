@@ -101,8 +101,46 @@
 }
 
 .headerstyle{
-    font-size: 4em;
-    margin-top: 1em!important;
-    margin-bottom: 3em;
+    z-index: 30;
+    margin-top: -5em !important;
+    font-size: 5em;
+    color: whitesmoke;
+    margin-bottom: 5em;
     font-family: Montserrat, sans-serif;
+}
+
+
+.z-30 {
+    z-index: -30;
+}
+.z-20 {
+    z-index: -20;
+}
+.w-screen {
+    width: 100vw;
+    max-height: 50em;
+    min-height: 45em;
+}
+.relative {
+    position: relative;
+}
+.object-center {
+    object-position: center;
+}
+.object-cover {
+    object-fit: cover;
+}
+.-mt-48 {
+    margin-top: -12rem;
+}
+.block {
+    display: block;
+}
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+.pb-48 {
+    padding-bottom: 12rem;
 }
