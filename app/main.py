@@ -1,5 +1,3 @@
-import math
-
 from flask import Flask, render_template
 
 from app.sources.cryptocurrency_api_connections.minerstat_api_endpoint import MinerstatApiEndpoint
