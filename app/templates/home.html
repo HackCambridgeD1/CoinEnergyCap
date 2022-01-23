@@ -4,38 +4,36 @@
 <div class="container pb-48 relative">
     <div class="row" , style="width:100%;">
         <h1 class="text-uppercase text-center headerstyle">Cryptocurrency Energy Usage</h1>
-<!--        <div>-->
-<!--            TOTAL % OF UK ENERGY : {{totals[0]}}-->
-<!--            TOTAL NUMBER OF TRIPS AROUND THE WORLD : {{totals[1]}}-->
-<!--            TOTAL NUMBER OF TREES OF CO2 : {{totals[2]}}-->
-<!--        </div>-->
+
         <div class="base-triangle-layout">
             <div style="align-self: flex-end">
                 <image_wrapper-component
                         image_class="image_size_limiter_header"
                         image_source_path="{{ url_for('static', filename = 'images/earth_car.png') }}"
-                        value="5000 x"
-                        description="Round the World">
+                        value="{{totals[1]}}"
+                        description="Trips Around the World">
                 </image_wrapper-component>
             </div>
             <div style="align-self: flex-start">
                 <image_wrapper-component
                         image_class="image_size_limiter_header"
-                        image_source_path="{{ url_for('static', filename = 'images/uk_map_2.png') }}"
-                        value="60%"
-                        description="Of the Energy of the UK">
+                        image_source_path="{{ url_for('static', filename = 'images/pine_tree_3.png') }}"
+                        value="{{totals[2]}} of"
+                        description="Tree Equivalents CO2 Annually">
                 </image_wrapper-component>
             </div>
             <div style="align-self: flex-end">
                 <image_wrapper-component
                         image_class="image_size_limiter_header"
-                        image_source_path="{{ url_for('static', filename = 'images/pine_tree_3.png') }}"
-                        value="5000 x"
-                        description="Tree Equivalents">
+                        image_source_path="{{ url_for('static', filename = 'images/uk_map_2.png') }}"
+                        value="{{totals[0]}}%"
+                        description="Of the annual Electricity Consumption of the UK">
                 </image_wrapper-component>
             </div>
+
         </div>
     </div>
+
     <div class="row" , style="background-color:white; color:black; padding:20px;">
         <div class="accordion" id="accordionExample">
             {% for curr in currencies %}
@@ -72,20 +70,20 @@
                             <image_wrapper-component
                                     image_class="image_size_limiter_akkordeon"
                                     image_source_path="{{ url_for('static', filename = 'images/uk_map_2.png') }}"
-                                    value="60%"
-                                    description="Of the Energy of the UK">
+                                    value="{{curr[5]}}%"
+                                    description="Of the annual Electricity Consumption of the UK">
                             </image_wrapper-component>
                             <image_wrapper-component
                                     image_class="image_size_limiter_akkordeon"
                                     image_source_path="{{ url_for('static', filename = 'images/earth_car.png') }}"
-                                    value="5000 x"
-                                    description="Round the World">
+                                    value="{{curr[6]}}"
+                                    description="Trips Around the World">
                             </image_wrapper-component>
                             <image_wrapper-component
                                     image_class="image_size_limiter_akkordeon"
                                     image_source_path="{{ url_for('static', filename = 'images/pine_tree_3.png') }}"
-                                    value="5000 x"
-                                    description="Tree Equivalents">
+                                    value="{{curr[7]}}"
+                                    description="Tree Equivalents CO2 Annually">
                             </image_wrapper-component>
                         </div>
                     </div>

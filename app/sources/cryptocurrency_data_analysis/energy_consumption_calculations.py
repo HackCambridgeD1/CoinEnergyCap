@@ -67,3 +67,17 @@ def tons_oil_to_earth_circumventions(tons_of_oil: float):
     litres_of_oil = cubicmetres_of_oil * 1000
     kilometres_total = litres_of_oil / LITRES_PER_100KM
     return kilometres_total / EARTH_CIRCUMFERENCE_KM
+
+
+# https://thedriven.io/2020/10/20/model-3-achieves-record-low-energy-consumption-in-driving-efficiency-test/
+ELECTRIC_CAR_KWH_PER_KILOMETER = 15 / 100  # mj per mile to mj per kilometer
+ELECTRIC_CAR_J_PER_KILOMETER = ELECTRIC_CAR_KWH_PER_KILOMETER * 3.6 * 10 ** 6
+
+
+def joule_to_earth_circumventions(joules_electricity: float):
+    kilometres_total = joules_electricity / ELECTRIC_CAR_J_PER_KILOMETER
+    return kilometres_total / EARTH_CIRCUMFERENCE_KM
+
+
+# https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1043464/subnational_electricity_and_gas_consumption_summary_report_2020.pdf
+TOTAL_ELECTRICITY_CONSUMPTION_UK_J = 275 * 10 ** 12 * 3600  # toe

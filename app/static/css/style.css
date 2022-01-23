@@ -17,7 +17,7 @@
     max-height: 25em;
     max-width: 100%;
     display: flex;
-    flex: 0 0 0;
+    flex: 1 1 0;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
@@ -143,4 +143,13 @@ img, video {
 
 .pb-48 {
     padding-bottom: 12rem;
+}
+
+.navbar-container{
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: row;
+    align-items: center;
+
+    justify-content: space-around;
 }

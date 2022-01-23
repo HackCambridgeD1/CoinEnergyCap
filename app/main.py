@@ -1,10 +1,12 @@
+import math
+
 from flask import Flask, render_template
 
 from app.sources.cryptocurrency_api_connections.minerstat_api_endpoint import MinerstatApiEndpoint
 from app.sources.cryptocurrency_data_analysis.default_analysis_set import get_default_analysis_set, \
     get_annual_energy_consumption_in_j_from_timestamp
-from app.sources.cryptocurrency_data_analysis.energy_consumption_calculations import to_scientific_notation, \
-    to_twh_from_j, j_to_co2_kg_AVG
+from app.sources.cryptocurrency_data_analysis.energy_consumption_calculations import to_twh_from_j, j_to_co2_kg_AVG, \
+    TOTAL_ELECTRICITY_CONSUMPTION_UK_J, joule_to_earth_circumventions
 from app.sources.cryptocurrency_api_connections.market_cap_api import get_symbol_market_cap_map
 from app.sources.cryptocurrency_data_analysis.energy_consumption_calculations import tons_oil_to_earth_circumventions, \
     num_trees_to_offset_co2_amount, j_to_co2_kg_UK, j_to_tonnes_of_oil
@@ -52,28 +54,28 @@ def home():
 
     for crypto in default_analysis_set:
         ec_j = get_annual_energy_consumption_in_j_from_timestamp(crypto)
-        ec = get_energy_representation(ec_j)
+        ec_repr = get_energy_representation(ec_j)
         co2_raw = j_to_co2_kg_AVG(ec_j)
-        co2 = format_co2(co2_raw)
+        co2_repr = format_co2(co2_raw)
         sym = crypto.metadata.symbol
         cap = caps.get(sym, "N/A")
 
-        perc_uk_energy = j_to_co2_kg_UK(ec_j)
-        trips_around_word = tons_oil_to_earth_circumventions(j_to_tonnes_of_oil(ec_j))
-        trees = num_trees_to_offset_co2_amount(co2_raw)
+        perc_uk_energy = round((100 * ec_j / TOTAL_ELECTRICITY_CONSUMPTION_UK_J), 2)
+        trips_around_word = format(int(joule_to_earth_circumventions(ec_j)), ",")
+        trees = format(int(num_trees_to_offset_co2_amount(co2_raw)), ",")
 
         total_j += ec_j
         total_co2 += co2_raw
 
-        entry = [sym, ec, co2, format_dollar(crypto.price), cap, perc_uk_energy, trips_around_word, trees]
+        entry = [sym, ec_repr, co2_repr, format_dollar(crypto.price), cap, perc_uk_energy, trips_around_word, trees]
 
         currencies.append(entry)
 
-        total_perc_uk_energy = j_to_co2_kg_UK(total_j)
-        total_trips_around_word = tons_oil_to_earth_circumventions(j_to_tonnes_of_oil(total_j))
-        total_trees = num_trees_to_offset_co2_amount(total_co2)
+    total_perc_uk_energy = round((100 * total_j / TOTAL_ELECTRICITY_CONSUMPTION_UK_J), 0)
+    total_trips_around_word = format(int(joule_to_earth_circumventions(total_j)), ",")
+    total_trees = format(int(num_trees_to_offset_co2_amount(total_co2)), ",")
 
-        # Symbol, Energy Consumed, Co2 produced, Market Cap, Energy/£,
+    # Symbol, Energy Consumed, Co2 produced, Market Cap, Energy/£,
     return render_template("home.html", currencies=currencies,
                            totals=[total_perc_uk_energy, total_trips_around_word, total_trees])
 
