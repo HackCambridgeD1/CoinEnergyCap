@@ -17,57 +17,11 @@
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/utils.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/loading.js') }}"></script>
 
-    <style>
-        .wrapper {
-            position: relative;
-        }
-
-        .wrapper > svg {
-            position: relative;
-            transform: rotate(-90deg);
-            fill: none;
-            stroke: #337ab7;
-            stroke-dasharray: 0 0;
-        }
-
-        .wrapper > img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            text-align: center;
-            z-index: 1;
-        }
-
-        svg.progress-bar-success {
-            stroke: #5cb85c;
-        }
-
-        svg.progress-bar-info {
-            stroke: #5bc0de
-        }
-
-        svg.progress-bar-warning {
-            stroke: #f0ad4e;
-        }
-
-        svg.progress-bar-danger {
-            stroke: #d9534f;
-        }
-
-        .footer {
-          /*position: fixed;*/
-          left: 0;
-          bottom: 0;
-          width: 100%;
-          text-align: center;
-            padding-top: 1em;
-        }
-    </style>
-    <title>{% block title %}{% endblock %}</title>
+    <title>CoinEnergyCap</title>
 </head>
 <body>
 <nav style="min-height: 4em" class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid" >
+    <div class="container-fluid">
         <a class="navbar-brand" href="#">CoinEnergyCap</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs- target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
