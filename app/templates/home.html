@@ -3,9 +3,9 @@
 {% block content %}
 <div class="container">
   <div class = "row", style=" padding:20px;">
-    <h1>Today's Cryptocurrency Energy Usage</h1>
+    <h1>Cryptocurrency Energy Usage</h1>
     <div>
-      Below we can see ... for the top 20 cryptocurrencies
+      Below we can see ... for the top x cryptocurrencies
     </div>
   </div>
   <div class = "row", style="background-color:white; color:black; padding:20px;">
@@ -20,19 +20,16 @@
             {{curr[0]}}
           </div>
           <div class="col-sm">
-            Energy Consumed : {{curr[1]}}
+            Energy Consumed (TWh): {{curr[1]}}
           </div>
           <div class="col-sm">
-            C02 : {{curr[2]}}
+            C02 (kg) : {{curr[2]}}
           </div>
           <div class="col-sm">
-            Price : {{curr[3]}}
+            Price ($) : {{curr[3]}}
           </div>
           <div class="col-sm">
             Market Cap : {{curr[4]}}
-          </div>
-          <div class="col-sm">
-            Energy/$ : {{curr[5]}}
           </div>
         </div>
       </div>
@@ -40,7 +37,7 @@
     </h2>
     <div id="collapse{{ curr[0] }}" class="accordion-collapse collapse" aria-labelledby="heading{{ curr[0] }}" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong>This is the first item's accordion body.</strong>
+        <visual-component></visual-component>
       </div>
     </div>
   </div>
