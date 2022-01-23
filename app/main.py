@@ -35,7 +35,14 @@ def get_energy_representation(energy_joule):
 
 
 def format_co2(kilos_co2: float):
-    return format(int(kilos_co2 / 10 ** 3), ",")
+    co2 = kilos_co2 / 10 ** 3
+    if co2 > 1 :
+        repr =  format(int(co2), ",")
+    else:
+        repr = (f"{co2:.3}")
+    print(repr)
+    return repr
+
 
 
 @app.route("/")
@@ -57,6 +64,10 @@ def home():
         co2_repr = format_co2(co2_raw)
         sym = crypto.metadata.symbol
         cap = caps.get(sym, "N/A")
+
+        print(sym)
+        print(co2_raw)
+        print(co2_repr)
 
         perc_uk_energy = round((100 * ec_j / TOTAL_ELECTRICITY_CONSUMPTION_UK_J), 2)
         trips_around_word = format(int(joule_to_earth_circumventions(ec_j)), ",")
