@@ -1,0 +1,108 @@
+.image_wrapper {
+    max-height: 100%;
+    padding: 0.5rem;
+    flex-direction: column;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.accordion-body-max-height {
+    max-height: 25em !important;
+}
+
+.row-container {
+    padding: 0.5rem;
+    max-height: 25em;
+    max-width: 100%;
+    display: flex;
+    flex: 0 0 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.image_size_limiter_akkordeon {
+    max-height: 15em;
+    max-width: 15em;
+}
+
+
+:root {
+    --deep-waters: #022B49;
+    --teamseas-blue: #0058A5;
+    --bahamas: #00AACC;
+    --seafoam: #A8DFE2;
+    --dolphin-grey: #48545B;
+    --clownfish: #EF7517;
+    --orca: #191D21;
+    --shark-grey: #EBEBEB;
+    --sunset: #6C0146;
+    --sea-moss-pink: #D22E98;
+    --coral: #E13A06;
+    --sunshine: #FFB72B;
+    --grey-light: #ECECEC;
+    --grey-lighter: #F6F6F4;
+    --counter-xl: 2.75rem;
+    --counter-lg: 2.25rem;
+    --counter-md: 1.75rem;
+    --counter-sm: 1.25rem;
+    --counter-xs: 1.15rem;
+    --counter-xxs: 1rem;
+}
+
+:root {
+    --sunset: #6C0146;
+    --sunset-purple: #997ADD;
+    --sunset-pink: #EC91B9;
+    --sunset-orange: #FFB72B;
+    --sunset-red: #E13A06;
+}
+
+.live-counter .live-counter-subtitle {
+    color: var(--sunset) !important;
+}
+
+.text-blue-dark {
+    color: var(--deep-waters) !important;
+}
+
+.font-weight-light {
+    font-weight: 300 !important;
+}
+
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.mb-0, .my-0 {
+    margin-bottom: 0 !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.base-triangle-layout{
+    height:45em;
+    margin-top: 3em;
+    margin-bottom: 10em !important;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 0;
+    justify-content: space-around;
+}
+
+.image_size_limiter_header {
+    max-height: 22em;
+    max-width: 20em;
+    margin-bottom: 1em;
+}
+
+.headerstyle{
+    font-size: 4em;
+    margin-top: 1em!important;
+    margin-bottom: 3em;
+    font-family: Montserrat, sans-serif;
+}
